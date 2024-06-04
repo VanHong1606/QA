@@ -1,0 +1,29 @@
+{
+  "iPay": {
+    "iOS": {
+      "bundleId": "com.vietinbank.mobilebanking"
+    },
+    "Android": {
+      "appPackage": "com.vietinbank.ipay",
+      "appActivity": "com.vnpaystart.SplashActivity"
+    }
+  },
+  "QRCodeGenerator": {
+    "iOS": {
+      "bundleId": "qr.code.generator"
+    },
+    "Android": {
+      "appPackage": "qr.code.generator",
+      "appActivity": "qr.code.generator"
+    }
+  },
+  "Safari": {
+    "iOS": {
+      "bundleId": "com.apple.mobilesafari"
+    },
+    "Android": {
+      "appPackage": "com.apple.mobilesafari",
+      "appActivity": "com.apple.mobilesafari"
+    }
+  }
+}

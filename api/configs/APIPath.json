@@ -1,0 +1,10 @@
+{
+  "vtbApi": {
+    "development": {
+      "gen": "/development/qr/vietqr/gen",
+      "statusinq": "/development/virtualaccount/v2/statusinq",
+      "qrGenerator": "/development/qrcode/utilities/qrGenerator",
+      "qrTransInqSmartPos": "/development/qrcode/transaction/qrTransInqSmartPos"
+    }
+  }
+}

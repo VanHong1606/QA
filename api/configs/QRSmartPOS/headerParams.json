@@ -1,0 +1,12 @@
+{
+  "QRSmartPOS": [
+    {
+      "key": "x-ibm-client-secret",
+      "value": "2cd7b943f4d7c5115d44b81487497ae3"
+    },
+    {
+      "key": "x-ibm-client-id",
+      "value": "fbbf1989a3ad0de68446317f5f104df0"
+    }
+  ]
+}

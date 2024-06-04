@@ -1,0 +1,7 @@
+{
+  "vtbApi": {
+    "sit": "https://api-sit.vietinbank.vn/vtb-api-sit",
+    "uat": "https://api-uat.vietinbank.vn/vtb-api-uat",
+    "product": "https://api-product.vietinbank.vn/vtb-api-product"
+  }
+}
