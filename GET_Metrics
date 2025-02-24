@@ -1,0 +1,63 @@
+package Test;
+
+import Utilities.APIconfig;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+
+@Test
+public class GetMetrics {
+
+    public void GetMetrics(String[] args) {
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .auth()
+                .basic(APIconfig.USERNAME, APIconfig.PASSWORD)
+                .when()
+                .get(APIconfig.BASE_URL + "/primeapi-v3/metrics")
+                .then()
+                .statusCode(200)
+                .extract().response();
+
+        // Verify data array is not empty
+        response.then().body("data", not(empty()));
+        // Verify response time is under 200ms
+        response.then().time(lessThan(200L));
+        //Content-Type header is present and has value text/plain
+        response.then().header("Content-Type", "text/plain");
+        response.then().contentType(ContentType.JSON);
+        // Validate the response schema to ensure it matches the expected structure
+        response.then().body(is(notNullValue()));
+        response.then().body("data", hasSize(1));
+        response.then().body("title", equalTo("Prime-v3"));
+
+    }
+
+    @Test
+    public void GetRoot(String[] args) {
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .auth()
+                .basic(APIconfig.USERNAME, APIconfig.PASSWORD)
+                .when()
+                .get(APIconfig.BASE_URL + "/primeapi-v3/primeapi-v3/openapi.json")
+                .then()
+                .statusCode(200)
+                .extract().response();
+
+        // Verify data array is not empty
+        response.then().body("data", not(empty()));
+        // Verify response time is under 200ms
+        response.then().time(lessThan(200L));
+        //Content-Type header is present and has value text/plain
+        response.then().header("Content-Type", "text/plain");
+        // Validate the response schema to ensure it matches the expected structure
+        response.then().body(is(notNullValue()));
+        response.then().body("data", hasSize(1));
+        response.then().body("openapi", equalTo("3.0.0"));
+
+    }
+}
